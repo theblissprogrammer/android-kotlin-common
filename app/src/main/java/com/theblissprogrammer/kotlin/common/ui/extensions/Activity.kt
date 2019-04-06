@@ -1,4 +1,4 @@
-package com.theblissprogrammer.kotlin.common.ui.extentions
+package com.theblissprogrammer.kotlin.common.ui.extensions
 
 import android.app.Activity
 import android.content.Context

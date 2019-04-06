@@ -1,4 +1,4 @@
-package com.theblissprogrammer.kotlin.common.ui.extentions
+package com.theblissprogrammer.kotlin.common.ui.extensions
 
 import android.os.SystemClock
 import android.text.Editable

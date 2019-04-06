@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import com.theblissprogrammer.kotlin.common.R
-import com.theblissprogrammer.kotlin.common.ui.extentions.DebouncedTextWatcher
+import com.theblissprogrammer.kotlin.common.ui.extensions.DebouncedTextWatcher
 import kotlinx.android.synthetic.main.view_search_toolbar.view.*
 
 /**

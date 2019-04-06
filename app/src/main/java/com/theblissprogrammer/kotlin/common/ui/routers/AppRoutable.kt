@@ -1,7 +1,6 @@
 package com.theblissprogrammer.kotlin.common.ui.routers
 
 import androidx.fragment.app.Fragment
-import com.theblissprogrammer.kotlin.common.ui.extentions.replaceFragment
 import java.lang.ref.WeakReference
 
 /**
