@@ -83,4 +83,8 @@ open class BaseFragment: Fragment() {
             }
         }
     }
+    
+    fun goBack() {
+        activity?.onBackPressed()
+    }
 }
