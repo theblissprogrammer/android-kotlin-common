@@ -20,4 +20,8 @@
         <item name="android:textStyle">normal</item>
         <item name="android:iconifiedByDefault">false</item>
     </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@layout/launch_screen</item>
+    </style>
 </resources>
