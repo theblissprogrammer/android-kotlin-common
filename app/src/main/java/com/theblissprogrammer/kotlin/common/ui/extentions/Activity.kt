@@ -33,6 +33,26 @@ fun Fragment.replaceFragment(fragment: Fragment, addToBackStack: Boolean = true)
     transaction?.commitAllowingStateLoss()
 }
 
+fun Fragment.replaceChildFragment(fragment: Fragment, addToBackStack: Boolean = true) {
+    val transaction = childFragmentManager
+            .beginTransaction()
+            .setCustomAnimations(R.anim.right_enter, R.anim.left_exit, R.anim.left_enter, R.anim.right_exit)
+            .replace(R.id.fragment_holder, fragment,
+                    fragment::class.java.simpleName)
+
+    if (addToBackStack)
+        transaction.addToBackStack(fragment::class.java.simpleName)
+
+    transaction.commitAllowingStateLoss()
+}
+
+fun Fragment.placeChildFragment(fragment: Fragment) {
+    childFragmentManager
+        .beginTransaction()
+        .replace(R.id.fragment_holder, fragment)
+        .commitAllowingStateLoss()
+}
+
 fun AppCompatActivity.fullScreen() {
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
