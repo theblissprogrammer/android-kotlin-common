@@ -12,19 +12,19 @@ import com.theblissprogrammer.kotlin.common.ui.CoreApplication
 import com.theblissprogrammer.kotlin.common.ui.controls.SpinnerDialogFragment
 
 
-fun AppCompatActivity.replaceFragment(fragment: Fragment) {
+fun AppCompatActivity.replaceFragment(containerViewId: Int = R.id.fragment_holder, fragment: Fragment) {
 
     supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_holder, fragment)
+            .replace(containerViewId, fragment)
             .commitAllowingStateLoss()
 }
 
-fun Fragment.replaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
+fun Fragment.replaceFragment(containerViewId: Int = R.id.fragment_holder, fragment: Fragment, addToBackStack: Boolean = true) {
     val transaction = fragmentManager
             ?.beginTransaction()
             ?.setCustomAnimations(R.anim.right_enter, R.anim.left_exit, R.anim.left_enter, R.anim.right_exit)
-            ?.replace(R.id.fragment_holder, fragment,
+            ?.replace(containerViewId, fragment,
                     fragment::class.java.simpleName)
 
     if (addToBackStack)
@@ -33,11 +33,11 @@ fun Fragment.replaceFragment(fragment: Fragment, addToBackStack: Boolean = true)
     transaction?.commitAllowingStateLoss()
 }
 
-fun Fragment.replaceChildFragment(fragment: Fragment, addToBackStack: Boolean = true) {
+fun Fragment.replaceChildFragment(containerViewId: Int = R.id.fragment_holder, fragment: Fragment, addToBackStack: Boolean = true) {
     val transaction = childFragmentManager
             .beginTransaction()
             .setCustomAnimations(R.anim.right_enter, R.anim.left_exit, R.anim.left_enter, R.anim.right_exit)
-            .replace(R.id.fragment_holder, fragment,
+            .replace(containerViewId, fragment,
                     fragment::class.java.simpleName)
 
     if (addToBackStack)
@@ -46,10 +46,10 @@ fun Fragment.replaceChildFragment(fragment: Fragment, addToBackStack: Boolean = 
     transaction.commitAllowingStateLoss()
 }
 
-fun Fragment.placeChildFragment(fragment: Fragment) {
+fun Fragment.placeChildFragment(containerViewId: Int = R.id.fragment_holder, fragment: Fragment) {
     childFragmentManager
         .beginTransaction()
-        .replace(R.id.fragment_holder, fragment)
+        .replace(containerViewId, fragment)
         .commitAllowingStateLoss()
 }
 
