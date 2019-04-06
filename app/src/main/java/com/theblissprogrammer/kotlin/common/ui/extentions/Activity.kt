@@ -53,6 +53,10 @@ fun Fragment.placeChildFragment(containerViewId: Int = R.id.fragment_holder, fra
         .commitAllowingStateLoss()
 }
 
+fun Fragment.onBackPressed() {
+    activity?.onBackPressed()
+}
+
 fun AppCompatActivity.fullScreen() {
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
