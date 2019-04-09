@@ -1,5 +1,4 @@
-[![Release](https://jitpack.io/v/User/Repo.svg)]
-(https://jitpack.io/#User/Repo)
+[![](https://jitpack.io/v/theblissprogrammer/android-kotlin-common.svg)](https://jitpack.io/#theblissprogrammer/android-kotlin-common)
 
 # android-kotlin-common
 A list of common helpers for kotln
