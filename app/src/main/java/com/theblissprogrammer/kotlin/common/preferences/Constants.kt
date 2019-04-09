@@ -28,6 +28,7 @@ class Constants(val store: ConstantsStore): ConstantsType {
             // Add your secret key in byte array
             unobfuscate(key = when (Environment.mode) {
                 Environment.DEVELOPMENT -> byteArrayOf(0)
+                Environment.STAGING -> byteArrayOf(0)
                 Environment.PRODUCTION -> byteArrayOf(0)
             })
         }
