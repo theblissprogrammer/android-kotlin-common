@@ -10,13 +10,15 @@ import com.theblissprogrammer.kotlin.common.BuildConfig
 
 enum class Environment {
     DEVELOPMENT,
+    STAGING,
     PRODUCTION;
     companion object {
         var mode: Environment = {
-            if (BuildConfig.FLAVOR.equals("dev"))
-                DEVELOPMENT
-            else
-                PRODUCTION
+            when {
+                BuildConfig.FLAVOR == "dev" -> DEVELOPMENT
+                BuildConfig.FLAVOR == "uat" -> STAGING
+                else -> PRODUCTION
+            }
         }()
     }
 }
