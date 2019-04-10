@@ -2,6 +2,10 @@ package com.theblissprogrammer.kotlin.common.dependencies
 
 import android.app.Application
 import android.content.Context
+import com.theblissprogrammer.kotlin.common.account.AuthenticationNetworkService
+import com.theblissprogrammer.kotlin.common.account.AuthenticationService
+import com.theblissprogrammer.kotlin.common.account.AuthenticationWorker
+import com.theblissprogrammer.kotlin.common.account.AuthenticationWorkerType
 import com.theblissprogrammer.kotlin.common.network.APISession
 import com.theblissprogrammer.kotlin.common.network.APISessionType
 import com.theblissprogrammer.kotlin.common.network.HTTPService
@@ -39,6 +43,14 @@ open class AppDependency: AppDependable {
         )
     }
 
+    override val resolveAuthenticationWorker: AuthenticationWorkerType  by lazy {
+        AuthenticationWorker(
+            service = resolveAuthenticationService,
+            preferencesWorker = resolvePreferencesWorker,
+            securityWorker = resolveSecurityWorker,
+            context = resolveContext
+        )
+    }
 
 
     // Stores
@@ -68,6 +80,12 @@ open class AppDependency: AppDependable {
             context = resolveContext,
             constants = resolveConstants,
             securityWorker = resolveSecurityWorker
+        )
+    }
+
+    override val resolveAuthenticationService: AuthenticationService  by lazy {
+        AuthenticationNetworkService(
+            apiSession = resolveAPISessionService
         )
     }
 }

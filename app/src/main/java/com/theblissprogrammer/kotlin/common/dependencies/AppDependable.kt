@@ -2,6 +2,8 @@ package com.theblissprogrammer.kotlin.common.dependencies
 
 import android.app.Application
 import android.content.Context
+import com.theblissprogrammer.kotlin.common.account.AuthenticationService
+import com.theblissprogrammer.kotlin.common.account.AuthenticationWorkerType
 import com.theblissprogrammer.kotlin.common.network.APISessionType
 import com.theblissprogrammer.kotlin.common.network.HTTPServiceType
 import com.theblissprogrammer.kotlin.common.preferences.ConstantsStore
@@ -25,6 +27,7 @@ interface AppDependable {
 
     val resolvePreferencesWorker: PreferencesWorkerType
     val resolveSecurityWorker: SecurityWorkerType
+    val resolveAuthenticationWorker: AuthenticationWorkerType
 
     val resolveConstantsStore: ConstantsStore
     val resolvePreferencesStore: PreferencesStore
@@ -32,4 +35,6 @@ interface AppDependable {
 
     val resolveHTTPService: HTTPServiceType
     val resolveAPISessionService: APISessionType
+
+    val resolveAuthenticationService: AuthenticationService
 }
