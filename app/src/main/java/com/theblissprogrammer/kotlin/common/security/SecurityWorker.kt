@@ -19,6 +19,8 @@ import org.json.JSONObject
 import java.io.ByteArrayInputStream
 import javax.crypto.spec.SecretKeySpec
 
+
+
 /**
  * Created by ahmedsaad on 2019-01-14.
  * Copyright © 2019. All rights reserved.
@@ -194,8 +196,7 @@ class SecurityWorker(val context: Context?,
         }
 
         try {
-            val privateKeyEntry = keyStore.getEntry(ALIAS, null) as KeyStore.PrivateKeyEntry
-            val publicKey = privateKeyEntry.certificate.publicKey
+            val publicKey = keyStore.getCertificate(ALIAS).publicKey
 
             // Encrypt the text
             if (value.isEmpty()) {
