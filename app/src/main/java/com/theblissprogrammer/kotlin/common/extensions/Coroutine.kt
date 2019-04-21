@@ -1,9 +1,9 @@
 package com.theblissprogrammer.kotlin.common.extensions
 
-import com.theblissprogrammer.kotlin.common.common.Result
-import com.theblissprogrammer.kotlin.common.common.Result.Companion.failure
 import com.theblissprogrammer.kotlin.common.common.CompletionResponse
 import com.theblissprogrammer.kotlin.common.common.LiveResult
+import com.theblissprogrammer.kotlin.common.common.Result
+import com.theblissprogrammer.kotlin.common.common.Result.Companion.failure
 import com.theblissprogrammer.kotlin.common.errors.DataError
 import kotlinx.coroutines.*
 import java.io.IOException
@@ -29,6 +29,12 @@ fun <T> coroutineNetwork (call: suspend () -> Result<T>): Deferred<Result<T>> {
     }
 }
 
+fun <T> coroutineNetwork (call: () -> Result<T>): Deferred<Result<T>> {
+    return GlobalScope.async(Dispatchers.IO) {
+        call()
+    }
+}
+
 fun <T> coroutineRoom (call: () -> LiveResult<T>): Deferred<LiveResult<T>> {
     return GlobalScope.async(Dispatchers.IO) {
         call()
@@ -38,6 +44,16 @@ fun <T> coroutineRoom (call: () -> LiveResult<T>): Deferred<LiveResult<T>> {
 fun coroutineOnUi (call: suspend () -> Unit) {
     GlobalScope.launch(Dispatchers.Main) {
         call()
+    }
+}
+
+fun coroutineOnUi (call: () -> Unit) {
+    GlobalScope.launch(Dispatchers.Main) {
+        suspend {
+            withContext(Dispatchers.IO) {
+                call()
+            }
+        }
     }
 }
 
