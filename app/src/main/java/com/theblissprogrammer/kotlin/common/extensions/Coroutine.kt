@@ -43,8 +43,8 @@ fun coroutineOnUi (call: suspend () -> Unit) {
 
 fun suspendCoroutineOnUi (call: () -> Unit) {
     GlobalScope.launch(Dispatchers.Main) {
-        suspend {
-            withContext(Dispatchers.IO) {
+        withContext(Dispatchers.IO) {
+            suspend {
                 call()
             }
         }
