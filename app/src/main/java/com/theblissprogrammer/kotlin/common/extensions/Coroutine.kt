@@ -29,12 +29,6 @@ fun <T> coroutineNetwork (call: suspend () -> Result<T>): Deferred<Result<T>> {
     }
 }
 
-fun <T> coroutineNetwork (call: () -> Result<T>): Deferred<Result<T>> {
-    return GlobalScope.async(Dispatchers.IO) {
-        call()
-    }
-}
-
 fun <T> coroutineRoom (call: () -> LiveResult<T>): Deferred<LiveResult<T>> {
     return GlobalScope.async(Dispatchers.IO) {
         call()
@@ -47,7 +41,7 @@ fun coroutineOnUi (call: suspend () -> Unit) {
     }
 }
 
-fun coroutineOnUi (call: () -> Unit) {
+fun suspendCoroutineOnUi (call: () -> Unit) {
     GlobalScope.launch(Dispatchers.Main) {
         suspend {
             withContext(Dispatchers.IO) {
