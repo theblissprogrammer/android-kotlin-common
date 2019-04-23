@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.Dimension
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import com.theblissprogrammer.kotlin.common.R
@@ -82,7 +83,7 @@ fun Activity.closeKeyboard() {
     }
 }
 
-fun dpToPx(dp: Int): Int {
+fun dpToPx(@Dimension(unit = Dimension.DP) dp: Int): Int {
     return (dp * Resources.getSystem().displayMetrics.density).toInt()
 }
 
