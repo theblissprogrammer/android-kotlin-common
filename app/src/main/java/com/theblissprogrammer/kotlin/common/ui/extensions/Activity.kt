@@ -2,6 +2,7 @@ package com.theblissprogrammer.kotlin.common.ui.extensions
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Resources
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -79,4 +80,12 @@ fun Activity.closeKeyboard() {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
+}
+
+fun dpToPx(dp: Int): Int {
+    return (dp * Resources.getSystem().displayMetrics.density).toInt()
+}
+
+fun pxToDp(px: Int): Int {
+    return (px / Resources.getSystem().displayMetrics.density).toInt()
 }
