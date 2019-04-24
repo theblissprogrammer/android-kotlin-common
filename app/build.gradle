@@ -67,5 +67,7 @@ dependencies {
     implementation "androidx.palette:palette:$rootProject.paletteVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
 
+    implementation "com.google.android.gms:play-services-maps:16.1.0"
+
     testImplementation "junit:junit:$rootProject.junitVersion"
 }
