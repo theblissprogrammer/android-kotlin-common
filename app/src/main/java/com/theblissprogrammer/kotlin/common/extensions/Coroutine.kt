@@ -41,14 +41,16 @@ fun coroutineOnUi (call: suspend () -> Unit) {
     }
 }
 
-fun suspendCoroutineOnUi (call: () -> Unit) {
-    GlobalScope.launch(Dispatchers.Main) {
-        withContext(Dispatchers.IO) {
-            suspend {
-                call()
-            }
-        }
+fun <T> suspendCoroutineOnUi (call: () -> T, completion: (T) -> Unit) {
+    coroutineOnUi {
+        completion(suspendCoroutineOnNetwork(call))
     }
+}
+
+private suspend fun <T> suspendCoroutineOnNetwork(call: () -> T): T {
+    return GlobalScope.async(Dispatchers.IO) {
+        call()
+    }.await()
 }
 
 fun coroutine (call: suspend () -> Unit): Deferred<Unit> {
