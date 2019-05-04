@@ -65,7 +65,7 @@ open class BaseFragment: Fragment() {
 
         activity?.apply {
             this.runOnUiThread {
-                val alert = AlertDialog.Builder(this)
+                val alert = AlertDialog.Builder(this, R.style.AlertDialogTheme)
                     .setTitle(title)
                     .setMessage(message)
                     .setCancelable(includeCancelAction)

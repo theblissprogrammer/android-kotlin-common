@@ -21,5 +21,8 @@ sealed class DataError : Exception() {
     class NetworkFailure(var error: Exception?) : DataError()
     class UnknownReason(var error: Exception?) : DataError()
     class ServerFailure(var errors: FieldErrors) : DataError()
-    class Other(var error: String? = null) : DataError()
+    class Other(var error: String? = null) : DataError() {
+        override val message: String?
+            get() = this.error
+    }
 }
