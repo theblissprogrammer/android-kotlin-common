@@ -20,5 +20,6 @@ sealed class DataError : Exception() {
     class CacheFailure(var error: Exception?) : DataError()
     class NetworkFailure(var error: Exception?) : DataError()
     class UnknownReason(var error: Exception?) : DataError()
-    class Other(var errors: FieldErrors) : DataError()
+    class ServerFailure(var errors: FieldErrors) : DataError()
+    class Other(var error: String? = null) : DataError()
 }
