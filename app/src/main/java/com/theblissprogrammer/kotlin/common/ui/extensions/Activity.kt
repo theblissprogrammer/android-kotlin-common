@@ -73,7 +73,7 @@ fun SpinnerDialogFragment.showSpinner(tag: String = "spinner") {
         }
 }
 
-fun SpinnerDialogFragment.hideSpinner() = dismissAllowingStateLoss()
+fun SpinnerDialogFragment?.hideSpinner() = this?.dismissAllowingStateLoss()
 
 fun Activity.closeKeyboard() {
     val view = this.currentFocus

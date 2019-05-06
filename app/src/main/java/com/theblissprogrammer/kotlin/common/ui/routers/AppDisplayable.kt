@@ -1,6 +1,7 @@
 package com.theblissprogrammer.kotlin.common.ui.routers
 
 import com.theblissprogrammer.kotlin.common.ui.BaseFragment
+import com.theblissprogrammer.kotlin.common.ui.extensions.hideSpinner
 import com.theblissprogrammer.kotlin.common.ui.routers.AppModels
 
 /**
@@ -11,6 +12,7 @@ interface AppDisplayable {
     fun display(error: AppModels.Error) {
         when (this) {
             is BaseFragment -> {
+                spinner.hideSpinner()
                 this.present(title = error.title, message = error.message)
             }
             else -> {}
