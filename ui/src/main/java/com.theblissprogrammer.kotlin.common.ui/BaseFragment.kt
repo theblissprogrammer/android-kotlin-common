@@ -6,7 +6,6 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.theblissprogrammer.kotlin.common.R
 import com.theblissprogrammer.kotlin.common.ui.extensions.createSpinner
 
 /**

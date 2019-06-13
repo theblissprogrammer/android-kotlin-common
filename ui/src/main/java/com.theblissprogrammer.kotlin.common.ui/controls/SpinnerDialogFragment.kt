@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
-import com.theblissprogrammer.kotlin.common.R
+import com.theblissprogrammer.kotlin.common.ui.R
 import kotlinx.android.synthetic.main.fragment_dialog_spinner.view.*
 
 

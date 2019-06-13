@@ -7,7 +7,7 @@ import android.view.animation.Transformation
 import android.widget.LinearLayout
 import android.os.SystemClock
 import androidx.core.widget.NestedScrollView
-import com.theblissprogrammer.kotlin.common.R
+import com.theblissprogrammer.kotlin.common.ui.R
 import java.util.*
 
 

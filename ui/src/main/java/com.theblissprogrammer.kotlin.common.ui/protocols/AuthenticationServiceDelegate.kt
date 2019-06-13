@@ -1,4 +1,4 @@
-package com.theblissprogrammer.kotlin.common.protocols
+package com.theblissprogrammer.kotlin.common.ui.protocols
 
 
 /**

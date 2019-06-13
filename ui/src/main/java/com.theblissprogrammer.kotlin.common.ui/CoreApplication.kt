@@ -6,8 +6,8 @@ import android.content.Context
 import android.content.IntentFilter
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.theblissprogrammer.kotlin.common.extensions.*
-import com.theblissprogrammer.kotlin.common.protocols.AuthenticationServiceDelegate
-import com.theblissprogrammer.kotlin.common.protocols.PushNotificationServiceDelegate
+import com.theblissprogrammer.kotlin.common.ui.protocols.AuthenticationServiceDelegate
+import com.theblissprogrammer.kotlin.common.ui.protocols.PushNotificationServiceDelegate
 
 
 /**

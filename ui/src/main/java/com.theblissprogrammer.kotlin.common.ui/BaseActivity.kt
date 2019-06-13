@@ -3,7 +3,6 @@ package com.theblissprogrammer.kotlin.common.ui
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.theblissprogrammer.kotlin.common.R
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -29,7 +28,7 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
         supportFragmentManager.popBackStack()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.

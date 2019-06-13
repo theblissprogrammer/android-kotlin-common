@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.Dimension
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
-import com.theblissprogrammer.kotlin.common.R
+import com.theblissprogrammer.kotlin.common.ui.R
 import com.theblissprogrammer.kotlin.common.ui.CoreApplication
 import com.theblissprogrammer.kotlin.common.ui.controls.SpinnerDialogFragment
 

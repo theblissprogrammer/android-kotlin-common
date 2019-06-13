@@ -2,7 +2,6 @@ package com.theblissprogrammer.kotlin.common.ui.routers
 
 import com.theblissprogrammer.kotlin.common.ui.BaseFragment
 import com.theblissprogrammer.kotlin.common.ui.extensions.hideSpinner
-import com.theblissprogrammer.kotlin.common.ui.routers.AppModels
 
 /**
  * Created by ahmedsaad on 2019-01-14.

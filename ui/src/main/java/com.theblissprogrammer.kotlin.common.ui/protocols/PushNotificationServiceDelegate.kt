@@ -1,4 +1,4 @@
-package com.theblissprogrammer.kotlin.common.protocols
+package com.theblissprogrammer.kotlin.common.ui.protocols
 
 /**
  * Created by ahmedsaad on 2019-01-14.

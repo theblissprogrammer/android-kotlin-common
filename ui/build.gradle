@@ -3,24 +3,17 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.github.theblissprogrammer'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        kapt {
-            arguments {
-                arg("room.schemaLocation", "$projectDir/schemas".toString())
-            }
-        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -39,16 +32,12 @@ android {
             returnDefaultValues = true
         }
     }
-
-    // add the schema location to the source sets
-    // used by Room, to test migrations
-    sourceSets {
-        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':core')
 
     implementation "androidx.appcompat:appcompat:$rootProject.compatVersion"
 
